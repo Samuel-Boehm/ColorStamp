@@ -8,7 +8,7 @@ A simple Python tool that creates aesthetically pleasing image compositions with
 
 **Disclaimer**: This project is tailored for my own purpose: creating Instagram stories from my photographs. That's why the format is fixed to portrait/phone aspect ratio and the resolution is only Full HD.
 
-I began with a very small script that did everything automatically, but I found that it sometimes did not pick up colors that were very important for the picture but were just not among the main colors (the red light in Figure 1 for example). Therefore, I created a GUI to manually select colors.
+I began with a very small script that did everything automatically, but I found that it sometimes did not pick up colors that were very important for the picture but were just not among the main colors (the red light in Figure 1 for example). Therefore, I created a GUI that allows users to manually pick additional colors beyond the automatic selection.
 
 ![The prominent red light is not shown as we expect it](images/example_a.png)
 *Figure 1: The prominent red light is not shown in the palette but it would be beautiful to have it.*
