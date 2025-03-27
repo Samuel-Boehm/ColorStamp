@@ -4,7 +4,8 @@
 <img src="images/final.jpg" alt="Example picture generated with the ColorStamp application." width="400">
 </p>
 
-A simple Python tool that creates aesthetically pleasing image compositions with color palettes and metadata - inspired by this [Reddit post](https://www.reddit.com/r/AskPhotography/comments/1em9lxx/where_do_we_export_image_with_metadata_like_this/).
+A simple Python tool that creates aesthetically pleasing image compositions with color palettes and metadata - inspired by this [Reddit post](https://www.reddit.com/r/SonyAlpha/comments/1em4g9k/first_try_at_night_photography/).
+Since there where people asking code to such pictures in [this](https://www.reddit.com/r/AskPhotography/comments/1em9lxx/where_do_we_export_image_with_metadata_like_this/)  post I wanted to share my code (I'M NOT THE ORIGINAL POSTER, all creative credits go to u/JohnnyFootball16 on Reddit)
 
 **Disclaimer**: This project is tailored for my own purpose: creating Instagram stories from my photographs. That's why the format is fixed to portrait/phone aspect ratio and the resolution is only Full HD.
 
