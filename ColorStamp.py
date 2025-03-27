@@ -21,7 +21,6 @@ class MetadataPaletteGenerator:
         self.selected_colors = []
         self.shadow_var = tk.BooleanVar(value=True)
         self.font_var = tk.StringVar(value="default")
-        self.color_count_var = tk.IntVar(value=5)
         self.font_size_var = tk.IntVar(value=24)  # Default font size is 24
 
         # Create frames
@@ -74,15 +73,6 @@ class MetadataPaletteGenerator:
         self.rectangle_tool_button = tk.Button(self.top_frame, text="Rectangle Tool", command=self.activate_rectangle_tool)
         self.rectangle_tool_button.pack(side=tk.LEFT, padx=5)
 
-    def enable_live_color_preview(self):
-        """Enable live color preview on the canvas"""
-        if not self.image_path:
-            messagebox.showwarning("Warning", "Please open an image first.")
-            return
-
-        # Bind mouse motion event to the canvas
-        self.canvas.bind("<Motion>", self.show_hover_color)
-    
     def activate_rectangle_tool(self):
         """Activate the rectangle tool for selecting regions"""
         if not self.image_path:
