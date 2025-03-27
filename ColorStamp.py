@@ -1,12 +1,10 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import os
-import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from datetime import datetime
 import cv2
 import numpy as np
-from sklearn.cluster import KMeans
 import exifread
 from sklearn.mixture import GaussianMixture
 
@@ -24,7 +22,8 @@ class MetadataPaletteGenerator:
         self.shadow_var = tk.BooleanVar(value=True)
         self.font_var = tk.StringVar(value="default")
         self.color_count_var = tk.IntVar(value=5)
-        
+        self.font_size_var = tk.IntVar(value=24)  # Default font size is 24
+
         # Create frames
         self.top_frame = tk.Frame(root)
         self.top_frame.pack(fill=tk.X, padx=10, pady=10)
@@ -279,6 +278,12 @@ class MetadataPaletteGenerator:
         
         self.font_dropdown = ttk.Combobox(self.options_frame, textvariable=self.font_var)
         self.font_dropdown.pack(side=tk.LEFT, padx=5)
+
+        self.font_size_label = tk.Label(self.options_frame, text="Font Size:")
+        self.font_size_label.pack(side=tk.LEFT, padx=5)
+
+        self.font_size_spinbox = tk.Spinbox(self.options_frame, from_=8, to=72, textvariable=self.font_size_var, width=5)
+        self.font_size_spinbox.pack(side=tk.LEFT, padx=5)
     
     def setup_bottom_frame(self):
         self.save_button = tk.Button(self.bottom_frame, text="Save Image", command=self.save_image)
@@ -633,8 +638,9 @@ class MetadataPaletteGenerator:
         }
     
     def get_font(self):
-        """Get the selected font"""
+        """Get the selected font with the selected size"""
         font_selection = self.font_var.get()
+        font_size = self.font_size_var.get()  # Get the selected font size
         
         if font_selection == "default":
             return ImageFont.load_default()
@@ -643,7 +649,7 @@ class MetadataPaletteGenerator:
         for font_path in self.available_fonts:
             if os.path.basename(font_path) == font_selection:
                 try:
-                    return ImageFont.truetype(font_path, 24)
+                    return ImageFont.truetype(font_path, font_size)
                 except Exception as e:
                     print(f"Error loading font {font_path}: {e}")
                     return ImageFont.load_default()
