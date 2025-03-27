@@ -43,6 +43,14 @@ ColorStamp requires Python 3.6+ and the following packages:
 ### Install Dependencies
 
 ```bash
+conda create -n ColorStamp
+```
+
+```bash
+conda activate ColorStamp
+```
+
+```bash
 pip install pillow opencv-python numpy scikit-learn exifread matplotlib
 ```
 
